@@ -1,0 +1,58 @@
+name: Update stock lists
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "30 2 * * 1"   # every Monday 08:00 IST
+
+permissions:
+  contents: write
+
+jobs:
+  lists:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download NSE and US index lists
+        run: |
+          mkdir -p data
+          python3 - <<'PY'
+          import csv, io, urllib.request, json
+          UA = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124 Safari/537.36", "Accept": "text/csv,*/*"}
+          def get(url):
+              return urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=30).read().decode("utf-8", "ignore")
+          files = {"total": "ind_niftytotalmarket_list.csv", "a": "ind_nifty50list.csv", "b": "ind_niftynext50list.csv", "c": "ind_nifty100list.csv",
+                   "d": "ind_nifty200list.csv", "e": "ind_nifty500list.csv", "m": "ind_niftymidcap150list.csv", "s": "ind_niftysmallcap250list.csv",
+                   "k": "ind_niftybanklist.csv", "i": "ind_niftyitlist.csv"}
+          rows, ok = {}, []
+          for key, f in files.items():
+              for base in ("https://www.niftyindices.com/IndexConstituent/", "https://nsearchives.nseindia.com/content/indices/", "https://archives.nseindia.com/content/indices/"):
+                  try:
+                      t = get(base + f)
+                      if "Symbol" not in t[:300]:
+                          continue
+                      for r in csv.DictReader(io.StringIO(t)):
+                          s = (r.get("Symbol") or "").strip()
+                          if not s or s.startswith("DUMMY"):
+                              continue
+                          d = rows.setdefault(s, {"name": (r.get("Company Name") or "").strip(), "industry": (r.get("Industry") or "").strip(), "lists": ""})
+                          if key != "total" and key not in d["lists"]:
+                              d["lists"] += key
+                      ok.append(key); break
+                  except Exception as e:
+                      print("fail", base, f, e)
+          print("downloaded:", ok, "stocks:", len(rows))
+          if "total" in ok and "e" in ok and len(rows) > 500:
+              with open("data/nse.csv", "w", newline="") as fh:
+                  w = csv.writer(fh); w.writerow(["symbol", "name", "industry", "lists"])
+                  for s in sorted(rows):
+                      d = rows[s]; w.writerow([s, d["name"].replace(" Limited", "").replace(" Ltd.", "")[:30], d["industry"], d["lists"]])
+          else:
+              print("NSE lists not reachable from GitHub; keeping the existing file")
+          PY
+      - name: Save changes
+        run: |
+          git config user.name "scanx-bot"
+          git config user.email "scanx-bot@users.noreply.github.com"
+          git add data/ || true
+          git diff --cached --quiet && echo "no changes" || (git commit -m "Update stock lists" && git push)
