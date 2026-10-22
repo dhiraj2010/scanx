@@ -1,0 +1,752 @@
+symbol,name,industry,lists
+360ONE,360 ONE WAM,Financial Services,dem
+AADHARHFC,Aadhar Housing Finance,Financial Services,es
+AARTIIND,Aarti Industries,Chemicals,es
+AARTIPHARM,Aarti Pharmalabs,Healthcare,
+AAVAS,Aavas Financiers,Financial Services,es
+ABB,ABB India,Capital Goods,bcde
+ABBOTINDIA,Abbott India,Healthcare,em
+ABCAPITAL,Aditya Birla Capital,Financial Services,dem
+ABDL,Allied Blenders and Distillers,Fast Moving Consumer Goods,es
+ABFRL,Aditya Birla Fashion and Retai,Consumer Services,
+ABLBL,Aditya Birla Lifestyle Brands,Consumer Services,
+ABREL,Aditya Birla Real Estate,Realty,es
+ABSLAMC,Aditya Birla Sun Life AMC,Financial Services,es
+ACC,ACC,Construction Materials,es
+ACE,Action Construction Equipment,Capital Goods,es
+ACI,Archean Chemical Industries,Chemicals,
+ACMESOLAR,ACME Solar Holdings,Power,es
+ACUTAAS,Acutaas Chemicals,Healthcare,es
+ADANIENSOL,Adani Energy Solutions,Power,bcde
+ADANIENT,Adani Enterprises,Metals & Mining,acde
+ADANIGREEN,Adani Green Energy,Power,bcde
+ADANIPORTS,Adani Ports and Special Econom,Services,acde
+ADANIPOWER,Adani Power,Power,bcde
+ADVENZYMES,Advanced Enzyme Tech,Healthcare,
+AEGISLOG,Aegis Logistics,Oil Gas & Consumable Fuels,es
+AEGISVOPAK,Aegis Vopak Terminals,Oil Gas & Consumable Fuels,es
+AEQUS,Aequs,Capital Goods,
+AEROFLEX,Aeroflex Industries,Capital Goods,
+AETHER,Aether Industries,Chemicals,es
+AFCONS,Afcons Infrastructure,Construction,es
+AFFLE,Affle 3i,Information Technology,es
+AIAENG,AIA Engineering,Capital Goods,em
+AIIL,Authum Investment & Infrastruc,Financial Services,em
+AJANTPHARM,Ajanta Pharmaceuticals,Healthcare,em
+AKUMS,Akums Drugs and Pharmaceutical,Healthcare,
+ALKEM,Alkem Laboratories,Healthcare,em
+ALKYLAMINE,Alkyl Amines Chemicals,Chemicals,
+AMAGI,Amagi Media Labs,Information Technology,
+AMBER,Amber Enterprises India,Consumer Durables,es
+AMBUJACEM,Ambuja Cements,Construction Materials,bcde
+ANANDRATHI,Anand Rathi Wealth,Financial Services,es
+ANANTRAJ,Anant Raj,Realty,es
+ANGELONE,Angel One,Financial Services,es
+ANTHEM,Anthem Biosciences,Healthcare,em
+ANURAS,Anupam Rasayan India,Chemicals,es
+APARINDS,Apar Industries,Capital Goods,dem
+APLAPOLLO,APL Apollo Tubes,Capital Goods,dem
+APOLLO,Apollo Micro Systems,Capital Goods,
+APOLLOHOSP,Apollo Hospitals Enterprise,Healthcare,acde
+APOLLOTYRE,Apollo Tyres,Automobile and Auto Components,es
+APTUS,Aptus Value Housing Finance In,Financial Services,es
+ARE&M,Amara Raja Energy & Mobility,Automobile and Auto Components,es
+ARVIND,Arvind,Textiles,
+ARVINDFASN,Arvind Fashions,Consumer Services,
+ASAHIINDIA,Asahi India Glass,Automobile and Auto Components,es
+ASHAPURMIN,Ashapura Minechem,Metals & Mining,
+ASHOKA,Ashoka Buildcon,Construction,
+ASHOKLEY,Ashok Leyland,Capital Goods,dem
+ASIANPAINT,Asian Paints,Consumer Durables,acde
+ASTERDM,Aster DM Quality Care,Healthcare,em
+ASTRAL,Astral,Capital Goods,dem
+ASTRAMICRO,Astra Microwave Products,Capital Goods,
+ATGL,Adani Total Gas,Oil Gas & Consumable Fuels,dem
+ATHERENERG,Ather Energy,Automobile and Auto Components,es
+ATLANTAELE,Atlanta Electricals,Capital Goods,
+ATUL,Atul,Chemicals,es
+AUBANK,AU Small Finance Bank,Financial Services,demk
+AURIONPRO,Aurionpro Solution,Information Technology,
+AUROPHARMA,Aurobindo Pharma,Healthcare,dem
+AVALON,Avalon Technologies,Capital Goods,
+AVANTIFEED,Avanti Feeds,Fast Moving Consumer Goods,es
+AVL,Aditya Vision,Consumer Services,
+AWL,AWL Agri Business,Fast Moving Consumer Goods,es
+AXISBANK,Axis Bank,Financial Services,acdek
+AXISCADES,AXISCADES Technologies,Capital Goods,
+AZAD,Azad Engineering,Capital Goods,es
+BAGMANE,Bagmane Prime Office REIT,Realty,es
+BAJAJ-AUTO,Bajaj Auto,Automobile and Auto Components,acde
+BAJAJCON,Bajaj Consumer Care,Fast Moving Consumer Goods,
+BAJAJFINSV,Bajaj Finserv,Financial Services,acde
+BAJAJHFL,Bajaj Housing Finance,Financial Services,em
+BAJAJHLDNG,Bajaj Holdings & Investment,Financial Services,bcde
+BAJFINANCE,Bajaj Finance,Financial Services,acde
+BALAMINES,Balaji Amines,Chemicals,
+BALKRISIND,Balkrishna Industries,Automobile and Auto Components,em
+BALRAMCHIN,Balrampur Chini Mills,Fast Moving Consumer Goods,es
+BALUFORGE,Balu Forge Industries,Capital Goods,
+BANCOINDIA,Banco Products (India),Automobile and Auto Components,
+BANDHANBNK,Bandhan Bank,Financial Services,es
+BANKBARODA,Bank of Baroda,Financial Services,bcdek
+BANKINDIA,Bank of India,Financial Services,dem
+BATAINDIA,Bata India,Consumer Durables,es
+BBOX,Black Box,Information Technology,es
+BDL,Bharat Dynamics,Capital Goods,dem
+BECTORFOOD,Mrs. Bectors Food Specialities,Fast Moving Consumer Goods,
+BEL,Bharat Electronics,Capital Goods,acde
+BELRISE,Belrise Industries,Automobile and Auto Components,es
+BEML,BEML,Capital Goods,es
+BERGEPAINT,Berger Paints India,Consumer Durables,em
+BHARATCOAL,Bharat Coking Coal,Oil Gas & Consumable Fuels,es
+BHARATFORG,Bharat Forge,Automobile and Auto Components,dem
+BHARTIARTL,Bharti Airtel,Telecommunication,acde
+BHARTIHEXA,Bharti Hexacom,Telecommunication,em
+BHEL,Bharat Heavy Electricals,Capital Goods,dem
+BIOCON,Biocon,Healthcare,dem
+BIRET,Brookfield India Real Estate T,Realty,es
+BIRLACORPN,Birla Corporation,Construction Materials,
+BLACKBUCK,Blackbuck,Services,
+BLS,BLS International Services,Consumer Services,es
+BLUEJET,Blue Jet Healthcare,Healthcare,
+BLUESTARCO,Blue Star,Consumer Durables,dem
+BLUESTONE,BlueStone Jewellery and Lifest,Consumer Durables,
+BORORENEW,Borosil Renewables,Capital Goods,
+BOSCHLTD,Bosch,Automobile and Auto Components,bcde
+BPCL,Bharat Petroleum Corporation,Oil Gas & Consumable Fuels,bcde
+BRIGADE,Brigade Enterprises,Realty,es
+BRITANNIA,Britannia Industries,Fast Moving Consumer Goods,bcde
+BSE,BSE,Financial Services,acde
+BSOFT,Birlasoft,Information Technology,es
+CAMPUS,Campus Activewear,Consumer Durables,
+CAMS,Computer Age Management Servic,Financial Services,es
+CANBK,Canara Bank,Financial Services,bcdek
+CANFINHOME,Can Fin Homes,Financial Services,es
+CANHLIFE,Canara HSBC Life Insurance Com,Financial Services,es
+CAPILLARY,Capillary Technologies India,Information Technology,
+CAPLIPOINT,Caplin Point Laboratories,Healthcare,es
+CARBORUNIV,Carborundum Universal,Capital Goods,es
+CARTRADE,Cartrade Tech,Consumer Services,es
+CASTROLIND,Castrol India,Oil Gas & Consumable Fuels,es
+CCL,CCL Products (I),Fast Moving Consumer Goods,es
+CDSL,Central Depository Services (I,Financial Services,es
+CEATLTD,Ceat,Automobile and Auto Components,es
+CEIGALL,Ceigall India,Construction,
+CELLO,Cello World,Consumer Durables,
+CEMPRO,Cemindia Projects,Construction,es
+CENTRALBK,Central Bank of India,Financial Services,es
+CENTUM,Centum Electronics,Capital Goods,
+CERA,Cera Sanitaryware Ltd,Consumer Durables,
+CESC,CESC,Power,es
+CGCL,Capri Global Capital,Financial Services,es
+CGPOWER,CG Power and Industrial Soluti,Capital Goods,bcde
+CHALET,Chalet Hotels,Consumer Services,
+CHAMBLFERT,Chambal Fertilizers & Chemical,Chemicals,es
+CHENNPETRO,Chennai Petroleum Corporation,Oil Gas & Consumable Fuels,es
+CHOICEIN,Choice International,Financial Services,es
+CHOLAFIN,Cholamandalam Investment and F,Financial Services,bcde
+CHOLAHLDNG,Cholamandalam Financial Holdin,Financial Services,es
+CIEINDIA,CIE Automotive India,Automobile and Auto Components,es
+CIPLA,Cipla,Healthcare,acde
+CLEAN,Clean Science and Technology,Chemicals,es
+CLEANMAX,Clean Max Enviro Energy Soluti,Power,es
+CMPDI,Central Mine Planning & Design,Services,es
+CMRGREEN,CMR Green Technologies,Capital Goods,
+CMSINFO,CMS Info Systems,Services,
+COALINDIA,Coal India,Oil Gas & Consumable Fuels,acde
+COCHINSHIP,Cochin Shipyard,Capital Goods,dem
+COFORGE,Coforge,Information Technology,demi
+COHANCE,Cohance Lifesciences,Healthcare,es
+COLPAL,Colgate Palmolive (India),Fast Moving Consumer Goods,dem
+CONCOR,Container Corporation of India,Services,dem
+CONCORDBIO,Concord Biotech,Healthcare,es
+COROMANDEL,Coromandel International,Chemicals,em
+CPPLUS,Aditya Infotech,Capital Goods,es
+CRAFTSMAN,Craftsman Automation,Automobile and Auto Components,es
+CRAMC,Canara Robeco Asset Management,Financial Services,
+CREDITACC,CreditAccess Grameen,Financial Services,es
+CRISIL,CRISIL,Financial Services,em
+CROMPTON,Crompton Greaves Consumer Elec,Consumer Durables,es
+CSBBANK,CSB Bank,Financial Services,
+CUB,City Union Bank,Financial Services,es
+CUMMINSIND,Cummins India,Capital Goods,bcde
+CUPID,Cupid,Fast Moving Consumer Goods,es
+CYIENT,Cyient,Information Technology,es
+DABUR,Dabur India,Fast Moving Consumer Goods,dem
+DALBHARAT,Dalmia Bharat,Construction Materials,em
+DATAMATICS,Datamatics Global Services,Information Technology,
+DATAPATTNS,Data Patterns (India),Capital Goods,es
+DBL,Dilip Buildcon,Construction,
+DBREALTY,VALOR ESTATE,Realty,
+DCBBANK,DCB Bank,Financial Services,
+DEEPAKFERT,Deepak Fertilisers & Petrochem,Chemicals,es
+DEEPAKNTR,Deepak Nitrite,Chemicals,es
+DELHIVERY,Delhivery,Services,es
+DEVYANI,Devyani International,Consumer Services,es
+DIACABS,Diamond Power Infrastructure,Capital Goods,
+DIVISLAB,Divi's Laboratories,Healthcare,bcde
+DIXON,Dixon Technologies (India),Consumer Durables,dem
+DLF,DLF,Realty,bcde
+DMART,Avenue Supermarts,Consumer Services,bcde
+DOMS,DOMS Industries,Fast Moving Consumer Goods,es
+DRREDDY,Dr. Reddy's Laboratories,Healthcare,acde
+DYNAMATECH,Dynamatic Technologies,Capital Goods,
+E2E,E2E NETWORKS,Information Technology,
+EBGNG,GNG Electronics,Information Technology,
+ECLERX,eClerx Services,Services,es
+EDELWEISS,Edelweiss Financial Services,Financial Services,
+EICHERMOT,Eicher Motors,Automobile and Auto Components,acde
+EIDPARRY,E.I.D. Parry (India),Fast Moving Consumer Goods,es
+EIEL,Enviro Infra Engineers,Utilities,
+EIHOTEL,EIH,Consumer Services,es
+ELECON,Elecon Engineering Co.,Capital Goods,es
+ELECTCAST,Electrosteel Castings,Capital Goods,
+ELGIEQUIP,Elgi Equipments,Capital Goods,es
+ELLEN,Ellenbarrie Industrial Gases,Chemicals,
+EMAMILTD,Emami,Fast Moving Consumer Goods,es
+EMBASSY,EMBASSY OFFICE PARKS REIT,Realty,em
+EMBDL,Embassy Developments,Realty,
+EMCURE,Emcure Pharmaceuticals,Healthcare,es
+EMIL,Electronics Mart India,Consumer Services,
+EMMVEE,Emmvee Photovoltaic Power,Capital Goods,es
+ENDURANCE,Endurance Technologies,Automobile and Auto Components,em
+ENGINERSIN,Engineers India,Construction,es
+ENRIN,Siemens Energy India,Capital Goods,bcde
+ENTERO,Entero Healthcare Solutions,Consumer Services,
+EPL,EPL,Capital Goods,
+EQUITASBNK,Equitas Small Finance Bank,Financial Services,
+ERIS,Eris Lifesciences,Healthcare,
+ESCORTS,Escorts Kubota,Capital Goods,em
+ETERNAL,Eternal,Consumer Services,acde
+EXIDEIND,Exide Industries,Automobile and Auto Components,dem
+FACT,Fertilisers and Chemicals Trav,Chemicals,em
+FEDERALBNK,Federal Bank,Financial Services,demk
+FEDFINA,Fedbank Financial Services,Financial Services,
+FIEMIND,Fiem Industries Ltd,Automobile and Auto Components,
+FINCABLES,Finolex Cables,Capital Goods,es
+FINPIPE,Finolex Industries,Capital Goods,
+FIRSTCRY,Brainbees Solutions,Consumer Services,es
+FIVESTAR,Five-Star Business Finance,Financial Services,es
+FLUOROCHEM,Gujarat Fluorochemicals,Chemicals,em
+FORCEMOT,Force Motors,Automobile and Auto Components,es
+FORTIS,Fortis Healthcare,Healthcare,dem
+FRACTAL,Fractal Analytics,Information Technology,es
+FSL,Firstsource Solutions,Services,es
+GABRIEL,Gabriel India,Automobile and Auto Components,es
+GAEL,Gujarat Ambuja Exports,Fast Moving Consumer Goods,
+GAIL,GAIL (India),Oil Gas & Consumable Fuels,bcde
+GALLANTT,Gallantt Ispat,Capital Goods,es
+GENUSPOWER,Genus Power Infrastructures,Capital Goods,
+GESHIP,Great Eastern Shipping Co.,Services,es
+GICRE,General Insurance Corporation ,Financial Services,em
+GILLETTE,Gillette India,Fast Moving Consumer Goods,es
+GLAND,Gland Pharma,Healthcare,es
+GLAXO,Glaxosmithkline Pharmaceutical,Healthcare,em
+GLENMARK,Glenmark Pharmaceuticals,Healthcare,dem
+GMDCLTD,Gujarat Mineral Development Co,Metals & Mining,es
+GMRAIRPORT,GMR Airports,Services,dem
+GMRP&UI,GMR Power and Urban Infra,Power,
+GNFC,Gujarat Narmada Valley Fertili,Chemicals,
+GODFRYPHLP,Godfrey Phillips India,Fast Moving Consumer Goods,dem
+GODREJAGRO,Godrej Agrovet,Fast Moving Consumer Goods,
+GODREJCP,Godrej Consumer Products,Fast Moving Consumer Goods,bcde
+GODREJIND,Godrej Industries,Diversified,em
+GODREJPROP,Godrej Properties,Realty,dem
+GOKEX,Gokaldas Exports,Textiles,
+GOKULAGRO,Gokul Agro Resources,Fast Moving Consumer Goods,
+GOLDIAM,Goldiam International,Consumer Durables,
+GPIL,Godawari Power & Ispat,Capital Goods,es
+GPPL,Gujarat Pipavav Port,Services,
+GRANULES,Granules India,Healthcare,es
+GRAPHITE,Graphite India,Capital Goods,es
+GRASIM,Grasim Industries,Construction Materials,acde
+GRAVITA,Gravita India,Metals & Mining,es
+GREAVESCOT,Greaves Cotton,Capital Goods,
+GRINDWELL,Grindwell Norton,Capital Goods,
+GROWW,Billionbrains Garage Ventures,Financial Services,dem
+GRSE,Garden Reach Shipbuilders & En,Capital Goods,es
+GRWRHITECH,Garware Hi-Tech Films,Capital Goods,
+GSFC,Gujarat State Fertilizers & Ch,Chemicals,
+GUJALKALI,Gujarat Alkalies & Chemicals,Chemicals,
+GVT&D,GE Vernova T&D India,Capital Goods,dem
+HAL,Hindustan Aeronautics,Capital Goods,bcde
+HAPPSTMNDS,Happiest Minds Technologies,Information Technology,
+HAPPYFORGE,Happy Forgings,Capital Goods,
+HAVELLS,Havells India,Consumer Durables,dem
+HBLENGINE,HBL Engineering,Capital Goods,es
+HCC,Hindustan Construction Co.,Construction,
+HCG,Healthcare Global Enterprises,Healthcare,
+HCLTECH,HCL Technologies,Information Technology,acdei
+HDBFS,HDB Financial Services,Financial Services,em
+HDFCAMC,HDFC Asset Management Company,Financial Services,bcde
+HDFCBANK,HDFC Bank,Financial Services,acdek
+HDFCLIFE,HDFC Life Insurance Company,Financial Services,acde
+HEGAM,HEG Advanced Materials,Capital Goods,es
+HERITGFOOD,Heritage Foods,Fast Moving Consumer Goods,
+HEROMOTOCO,Hero MotoCorp,Automobile and Auto Components,dem
+HEXT,Hexaware Technologies,Information Technology,em
+HFCL,HFCL,Telecommunication,es
+HGINFRA,H.G. Infra Engineering,Construction,
+HINDALCO,Hindalco Industries,Metals & Mining,acde
+HINDCOPPER,Hindustan Copper,Metals & Mining,dem
+HINDPETRO,Hindustan Petroleum Corporatio,Oil Gas & Consumable Fuels,dem
+HINDUNILVR,Hindustan Unilever,Fast Moving Consumer Goods,acde
+HINDZINC,Hindustan Zinc,Metals & Mining,bcde
+HOMEFIRST,Home First Finance Company Ind,Financial Services,es
+HONASA,Honasa Consumer,Fast Moving Consumer Goods,es
+HONAUT,Honeywell Automation India,Capital Goods,es
+HSCL,Himadri Speciality Chemical,Chemicals,es
+HUDCO,Housing & Urban Development Co,Financial Services,em
+HYUNDAI,Hyundai Motor India,Automobile and Auto Components,bcde
+ICICIAMC,ICICI Prudential Asset Managem,Financial Services,dem
+ICICIBANK,ICICI Bank,Financial Services,acdek
+ICICIGI,ICICI Lombard General Insuranc,Financial Services,dem
+ICICIPRULI,ICICI Prudential Life Insuranc,Financial Services,em
+ICIL,Indo Count Industries,Textiles,
+IDBI,IDBI Bank,Financial Services,es
+IDEA,Vodafone Idea,Telecommunication,bcde
+IDFCFIRSTB,IDFC First Bank,Financial Services,demk
+IEX,Indian Energy Exchange,Financial Services,es
+IFBIND,IFB Industries,Consumer Durables,
+IFCI,IFCI,Financial Services,es
+IGIL,International Gemological Inst,Services,es
+IGL,Indraprastha Gas,Oil Gas & Consumable Fuels,es
+IIFL,IIFL Finance,Financial Services,es
+IIFLCAPS,IIFL Capital Services,Financial Services,
+IKS,Inventurus Knowledge Solutions,Information Technology,es
+IMFA,Indian Metals & Ferro Alloys,Metals & Mining,
+INDGN,Indegene,Healthcare,
+INDHOTEL,Indian Hotels Co.,Consumer Services,dem
+INDIACEM,India Cements,Construction Materials,es
+INDIAGLYCO,India Glycols,Fast Moving Consumer Goods,
+INDIAMART,Indiamart Intermesh,Consumer Services,es
+INDIANB,Indian Bank,Financial Services,dem
+INDIGO,InterGlobe Aviation,Services,acde
+INDIGOPNTS,Indigo Paints,Consumer Durables,
+INDUSINDBK,IndusInd Bank,Financial Services,demk
+INDUSTOWER,Indus Towers,Telecommunication,dem
+INFY,Infosys,Information Technology,acdei
+INOXINDIA,INOX India,Capital Goods,es
+INOXWIND,Inox Wind,Capital Goods,es
+INTELLECT,Intellect Design Arena,Information Technology,es
+IOB,Indian Overseas Bank,Financial Services,em
+IOC,Indian Oil Corporation,Oil Gas & Consumable Fuels,bcde
+IONEXCHANG,Ion Exchange (India),Utilities,
+IPCALAB,Ipca Laboratories,Healthcare,em
+IRB,IRB Infrastructure Developers,Construction,es
+IRCON,IRCON International,Construction,es
+IRCTC,Indian Railway Catering And To,Consumer Services,dem
+IREDA,Indian Renewable Energy Develo,Financial Services,dem
+IRFC,Indian Railway Finance Corpora,Financial Services,bcde
+ITC,ITC,Fast Moving Consumer Goods,acde
+ITCHOTELS,ITC Hotels,Consumer Services,em
+ITI,ITI,Telecommunication,es
+IXIGO,Le Travenues Technology,Consumer Services,
+J&KBANK,Jammu & Kashmir Bank,Financial Services,es
+JAIBALAJI,JAI BALAJI INDUSTRIES,Metals & Mining,
+JAINREC,Jain Resource Recycling,Metals & Mining,es
+JAMNAAUTO,Jamna Auto Industries,Automobile and Auto Components,
+JAYNECOIND,Jayaswal Neco Industries,Capital Goods,
+JBMA,JBM Auto,Automobile and Auto Components,es
+JINDALSAW,Jindal Saw,Capital Goods,es
+JINDALSTEL,Jindal Steel,Metals & Mining,bcde
+JIOFIN,Jio Financial Services,Financial Services,acde
+JKCEMENT,J.K. Cement,Construction Materials,em
+JKPAPER,JK Paper,Forest Materials,
+JKTYRE,JK Tyre & Industries,Automobile and Auto Components,es
+JMFINANCIL,JM Financial,Financial Services,es
+JPPOWER,Jaiprakash Power Ventures,Power,es
+JSFB,Jana Small Finance Bank,Financial Services,
+JSL,Jindal Stainless,Metals & Mining,em
+JSLL,Jeena Sikho Lifecare,Consumer Services,
+JSWCEMENT,JSW Cement,Construction Materials,es
+JSWENERGY,JSW Energy,Power,dem
+JSWINFRA,JSW Infrastructure,Services,em
+JSWSTEEL,JSW Steel,Metals & Mining,acde
+JUBLFOOD,Jubilant Foodworks,Consumer Services,dem
+JUBLINGREA,Jubilant Ingrevia,Chemicals,es
+JUBLPHARMA,Jubilant Pharmova,Healthcare,
+JUSTDIAL,Justdial,Consumer Services,
+JWL,Jupiter Wagons,Capital Goods,es
+JYOTHYLAB,Jyothy Labs,Fast Moving Consumer Goods,
+JYOTICNC,Jyoti CNC Automation,Capital Goods,es
+KAJARIACER,Kajaria Ceramics,Consumer Durables,es
+KALYANKJIL,Kalyan Jewellers India,Consumer Durables,dem
+KANSAINER,Kansai Nerolac Paints,Consumer Durables,
+KARURVYSYA,Karur Vysya Bank,Financial Services,es
+KAYNES,Kaynes Technology India,Capital Goods,es
+KEC,Kec International,Construction,es
+KEI,KEI Industries,Capital Goods,dem
+KFINTECH,Kfin Technologies,Financial Services,es
+KIMS,Krishna Institute of Medical S,Healthcare,es
+KIRLOSBROS,Kirloskar Brothers,Capital Goods,es
+KIRLOSENG,Kirloskar Oil Eng,Capital Goods,es
+KIRLPNU,Kirloskar Pneumatic Company,Capital Goods,
+KISSHT,OnEMI Technology Solutions,Financial Services,
+KITEX,Kitex Garments,Textiles,
+KMEW,Knowledge Marine & Engineering,Services,
+KNRCON,KNR Constructions,Construction,
+KOTAKBANK,Kotak Mahindra Bank,Financial Services,acdek
+KPIGREEN,KPI Green Energy,Power,
+KPIL,Kalpataru Projects Internation,Construction,es
+KPITTECH,KPIT Technologies,Information Technology,es
+KPRMILL,K.P.R. Mill,Textiles,em
+KRBL,KRBL,Fast Moving Consumer Goods,
+KRN,KRN HEAT EXCHANGER AND REFRIGE,Capital Goods,
+KSB,KSB,Capital Goods,es
+KSCL,Kaveri Seed Company,Fast Moving Consumer Goods,
+KTKBANK,Karnataka Bank,Financial Services,
+KWIL,Kwality Wall's (India),Fast Moving Consumer Goods,
+LALPATHLAB,Dr. Lal Path Labs,Healthcare,es
+LATENTVIEW,Latent View Analytics,Information Technology,
+LAURUSLABS,Laurus Labs,Healthcare,dem
+LEMONTREE,Lemon Tree Hotels,Consumer Services,es
+LENSKART,Lenskart Solutions,Consumer Services,dem
+LGEINDIA,LG Electronics India,Consumer Durables,dem
+LICHSGFIN,LIC Housing Finance,Financial Services,dem
+LICI,Life Insurance Corporation of ,Financial Services,dem
+LINDEINDIA,Linde India,Chemicals,em
+LLOYDSENGG,Lloyds Engineering Works,Capital Goods,
+LLOYDSENT,Lloyds Enterprises,Metals & Mining,
+LLOYDSME,Lloyds Metals And Energy,Metals & Mining,em
+LODHA,Lodha Developers,Realty,dem
+LOTUSDEV,SRI LOTUS DEVELOPERS AND REALT,Realty,
+LT,Larsen & Toubro,Construction,acde
+LTF,L&T Finance,Financial Services,dem
+LTFOODS,LT Foods,Fast Moving Consumer Goods,es
+LTM,LTM,Information Technology,bcdei
+LTTS,L&T Technology Services,Information Technology,em
+LUMAXIND,Lumax Industries,Automobile and Auto Components,
+LUMAXTECH,Lumax Auto Technologies,Automobile and Auto Components,
+LUPIN,Lupin,Healthcare,dem
+LXCHEM,Laxmi Organic Industries,Chemicals,
+M&M,Mahindra & Mahindra,Automobile and Auto Components,acde
+M&MFIN,Mahindra & Mahindra Financial ,Financial Services,dem
+MAHABANK,Bank of Maharashtra,Financial Services,dem
+MANAPPURAM,Manappuram Finance,Financial Services,es
+MANKIND,Mankind Pharma,Healthcare,dem
+MANORAMA,Manorama Industries,Fast Moving Consumer Goods,
+MANYAVAR,Vedant Fashions,Consumer Services,
+MAPMYINDIA,C.E. Info Systems,Information Technology,
+MARICO,Marico,Fast Moving Consumer Goods,dem
+MARKSANS,Marksans Pharma,Healthcare,
+MARUTI,Maruti Suzuki India,Automobile and Auto Components,acde
+MASTEK,Mastek,Information Technology,
+MAXHEALTH,Max Healthcare Institute,Healthcare,acde
+MAZDOCK,Mazagoan Dock Shipbuilders,Capital Goods,bcde
+MBAPL,Madhya Bharat Agro Products,Chemicals,
+MCX,Multi Commodity Exchange of In,Financial Services,dem
+MEDANTA,Global Health,Healthcare,em
+MEDPLUS,Medplus Health Services,Consumer Services,
+MEESHO,Meesho,Consumer Services,dem
+METROPOLIS,Metropolis Healthcare,Healthcare,
+MFSL,Max Financial Services,Financial Services,dem
+MGL,Mahanagar Gas,Oil Gas & Consumable Fuels,es
+MIDHANI,Mishra Dhatu Nigam,Capital Goods,
+MINDACORP,Minda Corporation,Automobile and Auto Components,es
+MMTC,MMTC,Services,es
+MOIL,MOIL,Metals & Mining,
+MOTHERSON,Samvardhana Motherson Internat,Automobile and Auto Components,bcde
+MOTILALOFS,Motilal Oswal Financial Servic,Financial Services,dem
+MPHASIS,MphasiS,Information Technology,demi
+MRF,MRF,Automobile and Auto Components,dem
+MRPL,Mangalore Refinery & Petrochem,Oil Gas & Consumable Fuels,es
+MSTCLTD,MSTC,Services,
+MSUMI,Motherson Sumi Wiring India,Automobile and Auto Components,es
+MTARTECH,MTAR Technologies,Capital Goods,es
+MUTHOOTFIN,Muthoot Finance,Financial Services,bcde
+NAM-INDIA,Nippon Life India Asset Manage,Financial Services,em
+NATCOPHARM,NATCO Pharma,Healthcare,es
+NATIONALUM,National Aluminium Co.,Metals & Mining,dem
+NAUKRI,Info Edge (India),Consumer Services,dem
+NAVA,Nava,Power,es
+NAVINFLUOR,Navin Fluorine International,Chemicals,es
+NAZARA,Nazara Technologies,Media Entertainment & Publication,
+NBCC,NBCC (India),Construction,es
+NCC,NCC,Construction,es
+NEOGEN,NEOGEN CHEMICALS LTD.,Chemicals,
+NEPHROPLUS,Nephrocare Health Services,Healthcare,
+NESTLEIND,Nestle India,Fast Moving Consumer Goods,acde
+NETWEB,Netweb Technologies India,Information Technology,es
+NETWORK18,Network18 Media & Investments,Media Entertainment & Publication,
+NEULANDLAB,Neuland Laboratories,Healthcare,es
+NEWGEN,Newgen Software Technologies,Information Technology,
+NFL,National Fertilizers,Chemicals,
+NH,Narayana Hrudayalaya,Healthcare,em
+NHPC,NHPC,Power,dem
+NIACL,The New India Assurance Compan,Financial Services,es
+NIVABUPA,Niva Bupa Health Insurance Com,Financial Services,
+NLCINDIA,NLC India,Power,dem
+NMDC,NMDC,Metals & Mining,dem
+NORTHARC,Northern Arc Capital,Financial Services,
+NSLNISP,NMDC Steel,Metals & Mining,es
+NTPC,NTPC,Power,acde
+NTPCGREEN,NTPC Green Energy,Power,em
+NUVAMA,Nuvama Wealth Management,Financial Services,es
+NUVOCO,Nuvoco Vistas Corporation,Construction Materials,es
+NYKAA,FSN E-Commerce Ventures,Consumer Services,dem
+OBEROIRLTY,Oberoi Realty,Realty,dem
+OFSS,Oracle Financial Services Soft,Information Technology,demi
+OIL,Oil India,Oil Gas & Consumable Fuels,dem
+OLAELEC,Ola Electric Mobility,Automobile and Auto Components,es
+OLECTRA,Olectra Greentech,Automobile and Auto Components,es
+OMNI,Omnitech Engineering,Capital Goods,
+ONESOURCE,Onesource Specialty Pharma,Healthcare,es
+ONGC,Oil & Natural Gas Corporation,Oil Gas & Consumable Fuels,acde
+OSWALPUMPS,Oswal Pumps,Capital Goods,
+PAGEIND,Page Industries,Textiles,dem
+PAISALO,Paisalo Digital,Financial Services,
+PARADEEP,Paradeep Phosphates,Chemicals,es
+PARAS,Paras Defence and Space Techno,Capital Goods,
+PARKHOSPS,Park Medi World,Healthcare,
+PATANJALI,Patanjali Foods,Fast Moving Consumer Goods,dem
+PAYTM,One 97 Communications,Financial Services,dem
+PCBL,PCBL Chemical,Chemicals,es
+PCJEWELLER,PC Jeweller,Consumer Durables,
+PDSL,PDS,Textiles,
+PERSISTENT,Persistent Systems,Information Technology,demi
+PETRONET,Petronet LNG,Oil Gas & Consumable Fuels,em
+PFC,Power Finance Corporation,Financial Services,bcde
+PFIZER,Pfizer,Healthcare,
+PFOCUS,Prime Focus,Media Entertainment & Publication,es
+PGEL,PG Electroplast,Consumer Durables,es
+PGHL,Procter & Gamble Health,Healthcare,
+PGIL,Pearl Global Industries,Textiles,
+PHOENIXLTD,Phoenix Mills,Realty,dem
+PICCADIL,Piccadily Agro Industries,Fast Moving Consumer Goods,
+PIDILITIND,Pidilite Industries,Chemicals,bcde
+PIIND,PI Industries,Chemicals,dem
+PINELABS,Pine Labs,Financial Services,es
+PIRAMALFIN,Piramal Finance,Financial Services,em
+PNB,Punjab National Bank,Financial Services,bcdek
+PNBHOUSING,PNB Housing Finance,Financial Services,es
+PNCINFRA,PNC Infratech,Construction,
+PNGJL,P N Gadgil Jewellers,Consumer Durables,
+POLICYBZR,PB Fintech,Financial Services,dem
+POLYCAB,Polycab India,Capital Goods,bcde
+POLYMED,Poly Medicure,Healthcare,es
+POONAWALLA,Poonawalla Fincorp,Financial Services,es
+POWERGRID,Power Grid Corporation of Indi,Power,acde
+POWERICA,Powerica,Capital Goods,
+POWERINDIA,Hitachi Energy India,Capital Goods,bcde
+POWERMECH,Power Mech Projects,Construction,
+PPLPHARMA,Piramal Pharma,Healthcare,es
+PRAJIND,Praj Industries,Capital Goods,
+PRECWIRE,Precision Wires India,Capital Goods,
+PREMIERENE,Premier Energies,Capital Goods,dem
+PRESTIGE,Prestige Estates Projects,Realty,dem
+PRICOLLTD,Pricol,Automobile and Auto Components,
+PRIVISCL,Privi Speciality Chemicals,Chemicals,es
+PTC,PTC India,Power,
+PTCIL,PTC Industries,Capital Goods,es
+PURVA,Puravankara,Realty,
+PVRINOX,PVR INOX,Media Entertainment & Publication,es
+PWL,Physicswallah,Consumer Services,es
+QPOWER,QUALITY POWER ELECTRICAL EQUIP,Capital Goods,
+QUESS,Quess Corp,Services,
+RADICO,Radico Khaitan Ltd,Fast Moving Consumer Goods,dem
+RAILTEL,Railtel Corporation Of India,Telecommunication,es
+RAIN,Rain Industries Ltd,Chemicals,
+RAINBOW,Rainbow Childrens Medicare,Healthcare,es
+RALLIS,Rallis India,Chemicals,
+RAMCOCEM,The Ramco Cements,Construction Materials,es
+RATEGAIN,Rategain Travel Technologies,Information Technology,
+RATNAMANI,Ratnamani Metals & Tubes,Capital Goods,
+RAYMONDLSL,Raymond Lifestyle,Textiles,
+RBA,Restaurant Brands Asia,Consumer Services,
+RBLBANK,RBL Bank,Financial Services,es
+RCF,Rashtriya Chemicals & Fertiliz,Chemicals,
+RECLTD,REC,Financial Services,dem
+REDINGTON,Redington,Services,es
+REFEX,Refex Industries,Utilities,
+RELAXO,Relaxo Footwears,Consumer Durables,
+RELIANCE,Reliance Industries,Oil Gas & Consumable Fuels,acde
+RELIGARE,Religare Enterprises,Financial Services,
+RENUKA,Shree Renuka Sugars,Fast Moving Consumer Goods,
+RESPONIND,Responsive Industries,Consumer Durables,
+RHIM,RHI MAGNESITA INDIA LTD.,Capital Goods,es
+RITES,RITES,Construction,es
+RKFORGE,Ramkrishna Forgings,Automobile and Auto Components,es
+ROUTE,Route Mobile,Telecommunication,
+RPOWER,Reliance Power,Power,es
+RRKABEL,R R Kabel,Capital Goods,es
+RTNPOWER,RattanIndia Power,Power,
+RUBICON,Rubicon Research,Healthcare,es
+RVNL,Rail Vikas Nigam,Construction,dem
+SAFARI,Safari Industries (India),Consumer Durables,
+SAGILITY,Sagility,Information Technology,es
+SAIL,Steel Authority of India,Metals & Mining,dem
+SAILIFE,Sai Life Sciences,Healthcare,es
+SAMHI,Samhi Hotels,Consumer Services,
+SAMMAANCAP,Sammaan Capital,Financial Services,es
+SANDUMA,Sandur Manganese & Iron Ores,Metals & Mining,
+SANSERA,Sansera Engineering,Automobile and Auto Components,es
+SAPPHIRE,Sapphire Foods India,Consumer Services,
+SARDAEN,Sarda Energy and Minerals,Metals & Mining,es
+SAREGAMA,Saregama India Ltd,Media Entertainment & Publication,
+SBFC,SBFC Finance,Financial Services,
+SBICARD,SBI Cards and Payment Services,Financial Services,dem
+SBILIFE,SBI Life Insurance Company,Financial Services,acde
+SBIN,State Bank of India,Financial Services,acdek
+SCHAEFFLER,Schaeffler India,Automobile and Auto Components,em
+SCHNEIDER,Schneider Electric Infrastruct,Capital Goods,es
+SCI,Shipping Corporation of India,Services,es
+SEDEMAC,SEDEMAC Mechatronics,Automobile and Auto Components,
+SENCO,Senco Gold,Consumer Durables,
+SENORES,Senores Pharmaceuticals,Healthcare,
+SFL,Sheela Foam,Consumer Durables,
+SGMART,SG Mart,Metals & Mining,
+SHADOWFAX,Shadowfax Technologies,Services,
+SHAILY,Shaily Engineering Plastics,Consumer Durables,
+SHAKTIPUMP,Shakti Pumps (India),Capital Goods,
+SHARDACROP,Sharda Cropchem,Chemicals,
+SHAREINDIA,Share India Securities,Financial Services,
+SHILCTECH,Shilchar Technologies,Capital Goods,
+SHILPAMED,Shilpa Medicare,Healthcare,
+SHREECEM,Shree Cement,Construction Materials,em
+SHREEJISPG,Shreeji Shipping Global,Services,
+SHRIPISTON,SPR Auto Technologies,Automobile and Auto Components,es
+SHRIRAMFIN,Shriram Finance,Financial Services,acde
+SHYAMMETL,Shyam Metalics and Energy,Capital Goods,es
+SIEMENS,Siemens,Capital Goods,bcde
+SIGMAADV,SIGMA ADVANCED SYSTEMS LTD.,Capital Goods,
+SIGNATURE,Signatureglobal (India),Realty,es
+SJS,S.J.S. Enterprises,Automobile and Auto Components,
+SJVN,SJVN,Power,es
+SKIPPER,Skipper,Capital Goods,
+SKYGOLD,SKY GOLD AND DIAMONDS,Consumer Durables,
+SMLMAH,SML Mahindra,Capital Goods,
+SOBHA,Sobha,Realty,es
+SOLARINDS,Solar Industries India,Chemicals,bcde
+SONACOMS,Sona BLW Precision Forgings,Automobile and Auto Components,es
+SONATSOFTW,Sonata Software,Information Technology,
+SOUTHBANK,South Indian Bank,Financial Services,
+SPARC,Sun Pharma Advanced Research C,Healthcare,
+SPLPETRO,Supreme Petrochem,Chemicals,
+SRF,SRF,Chemicals,dem
+STAR,Strides Pharma Science,Healthcare,
+STARHEALTH,Star Health and Allied Insuran,Financial Services,es
+STLTECH,Sterlite Technologies,Telecommunication,es
+STYLAMIND,Stylam Industries,Consumer Durables,
+SUBROS,Subros,Capital Goods,
+SUDARSCHEM,Sudarshan Chemical Industries,Chemicals,
+SUDEEPPHRM,Sudeep Pharma,Chemicals,
+SUMICHEM,Sumitomo Chemical India,Chemicals,es
+SUNDARMFIN,Sundaram Finance,Financial Services,em
+SUNDRMFAST,Sundram Fasteners,Automobile and Auto Components,
+SUNFLAG,Sunflag Iron & Steel Company,Capital Goods,
+SUNPHARMA,Sun Pharmaceutical Industries,Healthcare,acde
+SUNTECK,Sunteck Realty,Realty,
+SUNTV,Sun TV Network,Media Entertainment & Publication,es
+SUPREMEIND,Supreme Industries,Capital Goods,dem
+SUPRIYA,Supriya Lifescience,Healthcare,
+SURYAROSNI,Surya Roshni,Capital Goods,
+SUVEN,Suven Life Sciences,Healthcare,
+SUZLON,Suzlon Energy,Capital Goods,dem
+SWANCORP,Swan Corp,Chemicals,es
+SWIGGY,Swiggy,Consumer Services,dem
+SWSOLAR,Sterling and Wilson Renewable ,Construction,
+SYNGENE,Syngene International,Healthcare,es
+SYRMA,Syrma SGS Technology,Capital Goods,es
+TANLA,Tanla Platforms,Information Technology,
+TARC,TARC,Realty,
+TARIL,Transformers And Rectifiers (I,Capital Goods,es
+TATACAP,Tata Capital,Financial Services,bcde
+TATACHEM,Tata Chemicals,Chemicals,es
+TATACOMM,Tata Communications,Telecommunication,dem
+TATACONSUM,Tata Consumer Products,Fast Moving Consumer Goods,acde
+TATAELXSI,Tata Elxsi,Information Technology,es
+TATAINVEST,Tata Investment Corporation,Financial Services,em
+TATAPOWER,Tata Power Co.,Power,bcde
+TATASTEEL,Tata Steel,Metals & Mining,acde
+TATATECH,Tata Technologies,Information Technology,es
+TBOTEK,TBO Tek,Consumer Services,es
+TCS,Tata Consultancy Services,Information Technology,acdei
+TDPOWERSYS,TD Power Systems,Capital Goods,es
+TECHM,Tech Mahindra,Information Technology,acdei
+TECHNOE,Techno Electric & Engineering ,Construction,es
+TEGA,Tega Industries,Capital Goods,es
+TEJASNET,Tejas Networks,Telecommunication,es
+TENNIND,Tenneco Clean Air India,Automobile and Auto Components,es
+TEXRAIL,Texmaco Rail & Eng.,Capital Goods,
+THANGAMAYL,Thangamayil Jewellery,Consumer Durables,es
+THELEELA,Leela Palaces Hotels & Resorts,Consumer Services,
+THERMAX,Thermax,Capital Goods,em
+THOMASCOOK,Thomas Cook (India),Consumer Services,
+THYROCARE,Thyrocare Technologies,Healthcare,
+TI,Tilaknagar Industries,Fast Moving Consumer Goods,
+TIINDIA,Tube Investments of India,Automobile and Auto Components,dem
+TIMETECHNO,Time Technoplast,Capital Goods,
+TIMEX,Timex Group India,Consumer Durables,
+TIMKEN,Timken India,Capital Goods,es
+TIPSMUSIC,Tips Music,Media Entertainment & Publication,
+TITAGARH,Titagarh Rail Systems,Capital Goods,es
+TITAN,Titan Company,Consumer Durables,acde
+TMB,Tamilnad Mercantile Bank,Financial Services,
+TMCV,Tata Motors,Capital Goods,bcde
+TMPV,Tata Motors Passenger Vehicles,Automobile and Auto Components,acde
+TORNTPHARM,Torrent Pharmaceuticals,Healthcare,bcde
+TORNTPOWER,Torrent Power,Power,em
+TRANSRAILL,Transrail Lighting,Capital Goods,
+TRENT,Trent,Consumer Services,acde
+TRIDENT,Trident,Textiles,es
+TRITURBINE,Triveni Turbine,Capital Goods,es
+TRIVENIPT,Triveni Power Transmission,Capital Goods,
+TTKPRESTIG,TTK Prestige,Consumer Durables,
+TTML,Tata Teleservices (Maharashtra,Telecommunication,es
+TVSMOTOR,TVS Motor Company,Automobile and Auto Components,bcde
+TVSSCS,TVS Supply Chain Solutions,Services,
+UBL,United Breweries,Fast Moving Consumer Goods,em
+UCOBANK,UCO Bank,Financial Services,es
+UJJIVANSFB,Ujjivan Small Finance Bank,Financial Services,
+ULTRACEMCO,UltraTech Cement,Construction Materials,acde
+UNIMECH,Unimech Aerospace and Manufact,Capital Goods,
+UNIONBANK,Union Bank of India,Financial Services,bcdek
+UNITDSPR,United Spirits,Fast Moving Consumer Goods,dem
+UNOMINDA,UNO Minda,Automobile and Auto Components,em
+UPL,UPL,Chemicals,dem
+URBANCO,Urban Company,Consumer Services,es
+USHAMART,Usha Martin,Capital Goods,es
+UTIAMC,UTI Asset Management Company,Financial Services,es
+UTLSOLAR,Fujiyama Power Systems,Capital Goods,
+V2RETAIL,V2 Retail,Consumer Services,
+VAIBHAVGBL,Vaibhav Global,Consumer Durables,
+VAML,Vedanta Aluminium Metal,Metals & Mining,bcde
+VBL,Varun Beverages,Fast Moving Consumer Goods,bcde
+VEDL,Vedanta,Metals & Mining,bcde
+VEDPOWER,Vedanta Power,Power,es
+VESUVIUS,Vesuvius India,Capital Goods,
+VGUARD,V-Guard Industries,Consumer Durables,
+VIJAYA,Vijaya Diagnostic Centre,Healthcare,es
+VIKRAMSOLR,Vikram Solar,Capital Goods,
+VIPIND,V.I.P. Industries,Consumer Durables,
+VISL,Vedanta Iron and Steel,Metals & Mining,es
+VIYASH,Viyash Scientific,Healthcare,
+VMART,V-Mart Retail,Consumer Services,
+VMM,Vishal Mega Mart,Consumer Services,dem
+VOGL,Vedanta Oil and Gas,Oil Gas & Consumable Fuels,es
+VOLTAMP,Voltamp Transformers Ltd,Capital Goods,
+VOLTAS,Voltas,Consumer Durables,dem
+VTL,Vardhman Textiles,Textiles,es
+WAAREEENER,Waaree Energies,Capital Goods,dem
+WAAREERTL,Waaree Renewable Technologies,Capital Goods,
+WABAG,Va Tech Wabag,Utilities,
+WAKEFIT,Wakefit Innovations,Consumer Durables,
+WEBELSOLAR,Websol Energy System,Capital Goods,
+WELCORP,Welspun Corp,Capital Goods,es
+WELENT,Welspun Enterprises,Construction,
+WELSPUNLIV,Welspun Living,Textiles,es
+WESTLIFE,Westlife Foodworld,Consumer Services,
+WEWORK,WeWork India Management,Services,
+WHIRLPOOL,Whirlpool of India,Consumer Durables,es
+WIPRO,Wipro,Information Technology,bcdei
+WOCKPHARMA,Wockhardt,Healthcare,es
+YATHARTH,Yatharth Hospital & Trauma Car,Healthcare,
+YESBANK,Yes Bank,Financial Services,demk
+ZAGGLE,Zaggle Prepaid Ocean Services,Information Technology,
+ZEEL,Zee Entertainment Enterprises,Media Entertainment & Publication,es
+ZENSARTECH,Zensar Technolgies,Information Technology,es
+ZENTEC,Zen Technologies,Capital Goods,es
+ZFCVINDIA,ZF Commercial Vehicle Control ,Automobile and Auto Components,es
+ZYDUSLIFE,Zydus Lifesciences,Healthcare,bcde
+ZYDUSWELL,Zydus Wellness,Fast Moving Consumer Goods,es
