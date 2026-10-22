@@ -23,7 +23,8 @@ jobs:
           distribution: temurin
           java-version: 21
 
-      - uses: android-actions/setup-android@v3
+      - name: Android SDK (already on the GitHub build machine)
+        run: echo "ANDROID_HOME=$ANDROID_HOME" && ls $ANDROID_HOME
 
       - name: Install packages
         run: npm install
