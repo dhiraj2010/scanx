@@ -27,7 +27,8 @@ jobs:
         run: echo "ANDROID_HOME=$ANDROID_HOME" && ls $ANDROID_HOME
 
       - name: Install packages
-        run: npm install
+        run: npm install --no-audit --no-fund
+        timeout-minutes: 5
 
       - name: Copy app files
         run: npm run prepare-web
@@ -40,7 +41,6 @@ jobs:
         run: |
           pip install --quiet pillow
           python3 make_icons.py
-          npx capacitor-assets generate --android
 
       - name: Sync
         run: npx cap sync android
