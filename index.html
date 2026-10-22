@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<title>ScanX</title>
+<style>
+/* Layout: single column app; sticky top bar, controls card, results list; chart and help open as full-screen sheets. */
+:root{
+  --bg:#F2F4F7; --card:#FFFFFF; --sunk:#E9EDF2; --line:#D6DCE4; --ink:#121C2B; --muted:#5D6B7E;
+  --accent:#1F4FD1; --on-accent:#FFFFFF; --accent-soft:#E2E9FB;
+  --up:#0A7B55; --up-soft:#DBF1E8; --down:#BE3A2B; --down-soft:#F8E2DE;
+  --f:-apple-system,"Roboto","Segoe UI",system-ui,sans-serif; --mono:"Roboto Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root{
+  --bg:#0C1219; --card:#141C26; --sunk:#0F161F; --line:#263243; --ink:#E5EBF3; --muted:#91A0B4;
+  --accent:#6E9BFF; --on-accent:#0A1220; --accent-soft:#1A2946; --up:#3FCB97; --up-soft:#11321F; --down:#FF7E6A; --down-soft:#391B17; color-scheme:dark }}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+[hidden]{display:none!important}
+html,body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f);font-size:15px;line-height:1.4}
+body{padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)}
+.bar{position:sticky;top:0;z-index:5;background:var(--bg);display:flex;align-items:center;justify-content:space-between;padding:12px 16px 8px}
+.brand{font-weight:800;font-size:22px;letter-spacing:-.3px}.brand span{color:var(--accent)}
+.status{font-size:12px;color:var(--muted);text-align:right;max-width:60%}
+main{padding:0 12px 40px;display:flex;flex-direction:column;gap:12px;max-width:720px;margin:0 auto}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px;display:flex;flex-direction:column;gap:10px}
+label.l{font-size:12px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+select,textarea,input{font:inherit;color:var(--ink);background:var(--sunk);border:1px solid var(--line);border-radius:10px;padding:10px;width:100%}
+textarea{font-family:var(--mono);font-size:13.5px;min-height:150px;resize:vertical;line-height:1.5}
+.row{display:flex;gap:8px;align-items:center}.row>*{flex:1;min-width:0}
+.seg{display:flex;background:var(--sunk);border:1px solid var(--line);border-radius:10px;padding:3px}
+.seg button{flex:1;border:0;background:transparent;color:var(--ink);font:inherit;font-weight:600;padding:8px;border-radius:8px}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--on-accent)}
+.btn{font:inherit;font-weight:700;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--ink);padding:12px}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.btn.small{padding:8px 10px;font-weight:600;font-size:13px;flex:0 0 auto}
+.btn:disabled{opacity:.55}
+.note{font-size:13px;color:var(--muted);margin:0}
+.chips{display:flex;gap:6px;overflow-x:auto;padding-bottom:2px;scrollbar-width:none}
+.chip{flex:0 0 auto;font:inherit;font-size:13px;font-weight:600;padding:7px 11px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink)}
+.chip[aria-pressed="true"]{background:var(--accent-soft);border-color:var(--accent);color:var(--accent)}
+.prog{height:6px;border-radius:3px;background:var(--sunk);overflow:hidden}.prog i{display:block;height:100%;width:0;background:var(--accent);transition:width .2s}
+.regime{border-radius:12px;padding:10px 12px;font-weight:600;font-size:14px}
+.regime.on{background:var(--up-soft);color:var(--up)}.regime.off{background:var(--down-soft);color:var(--down)}
+.err{background:var(--down-soft);color:var(--down);border-radius:10px;padding:10px;font-size:13px;white-space:pre-wrap}
+.reshead{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.count{font-size:20px;font-weight:800}.count small{font-size:13px;font-weight:500;color:var(--muted);margin-left:4px}
+.list{display:flex;flex-direction:column;gap:8px}
+.stock{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 12px;display:grid;grid-template-columns:1fr auto;gap:2px 10px;text-align:left;font:inherit;color:inherit;width:100%}
+.stock .s{font-weight:800;font-size:16px}.stock .n{grid-column:1;font-size:12px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.stock .p{text-align:right;font-weight:700;font-variant-numeric:tabular-nums}.stock .ch{text-align:right;font-size:13px;font-weight:600;font-variant-numeric:tabular-nums}
+.stock .m{grid-column:1 / 3;display:flex;gap:12px;flex-wrap:wrap;font-size:12.5px;color:var(--muted);margin-top:4px;font-variant-numeric:tabular-nums}
+.rs{display:inline-block;padding:0 6px;border-radius:6px;font-weight:700;font-size:12px;background:var(--accent-soft);color:var(--accent);margin-left:6px;vertical-align:2px}
+.pos{color:var(--up)}.neg{color:var(--down)}
+.empty{text-align:center;color:var(--muted);padding:24px 8px}
+.sheet{position:fixed;inset:0;z-index:20;background:var(--bg);display:flex;flex-direction:column;padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)}
+.sheet header{display:flex;align-items:center;gap:10px;padding:12px 16px;border-bottom:1px solid var(--line)}
+.sheet header h2{margin:0;font-size:18px;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.sheet .body{overflow-y:auto;padding:12px 16px 32px;display:flex;flex-direction:column;gap:12px}
+canvas{width:100%;height:340px;background:var(--card);border:1px solid var(--line);border-radius:12px;touch-action:pan-y}
+.kv{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.kv div{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:8px 10px;font-size:12px;color:var(--muted)}
+.kv b{display:block;font-size:15px;color:var(--ink);font-variant-numeric:tabular-nums}
+.help code{font-family:var(--mono);font-size:13px;background:var(--sunk);padding:1px 5px;border-radius:5px}
+.help p{margin:0 0 10px}
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom));transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:10px;font-size:14px;z-index:30}
+.foot{font-size:11.5px;color:var(--muted);text-align:center;padding:8px}
+a{color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="bar"><div class="brand">Scan<span>X</span></div><div class="status" id="status">No data loaded</div></div>
+<main>
+  <section class="card">
+    <div class="row">
+      <div><label class="l" for="uni">Stocks</label><select id="uni"></select></div>
+    </div>
+    <div class="seg" role="group" aria-label="Timeframe"><button type="button" id="tfD">Daily</button><button type="button" id="tfW">Weekly</button></div>
+    <div><label class="l" for="preset">Scan</label><select id="preset"></select></div>
+    <p class="note" id="pnote"></p>
+    <textarea id="text" spellcheck="false" autocapitalize="off" autocorrect="off" aria-label="Scan conditions"></textarea>
+    <div class="row">
+      <button class="btn primary" id="run" type="button">Run scan</button>
+      <button class="btn small" id="save" type="button">Save</button>
+      <button class="btn small" id="help" type="button">Help</button>
+    </div>
+    <div class="prog" id="prog" hidden><i></i></div>
+    <p class="note" id="progTxt" hidden></p>
+  </section>
+
+  <div id="errBox"></div>
+  <div id="regime"></div>
+
+  <section id="results" hidden>
+    <div class="reshead"><div class="count" id="count">0<small>stocks</small></div><button class="btn small" id="copy" type="button">Copy tickers</button></div>
+    <div class="chips" id="sorts" role="group" aria-label="Sort"></div>
+    <div class="list" id="list"></div>
+  </section>
+  <div class="empty" id="first">Pick stocks and a scan, then tap <b>Run scan</b>. The first download of a large list takes about a minute; after that it is cached for 6 hours.</div>
+  <button class="btn small" id="refresh" type="button" hidden style="align-self:center">Download fresh prices</button>
+  <div class="foot">Educational tool, not investment advice or a SEBI-registered recommendation. Prices: Yahoo Finance, end-of-day or delayed.</div>
+</main>
+
+<div class="sheet" id="chartSheet" hidden>
+  <header><button class="btn small" id="closeChart" type="button" aria-label="Back">← Back</button><h2 id="cTitle"></h2></header>
+  <div class="body">
+    <canvas id="cv" aria-label="Price chart"></canvas>
+    <div class="kv" id="cStats"></div>
+    <a class="btn primary" id="tvLink" target="_blank" rel="noopener" style="text-align:center;text-decoration:none">Open in TradingView</a>
+  </div>
+</div>
+
+<div class="sheet" id="helpSheet" hidden>
+  <header><button class="btn small" id="closeHelp" type="button">← Back</button><h2>How to write a scan</h2></header>
+  <div class="body help">
+    <p>Write <b>one condition per line</b>. A stock shows up only when every line is true on the latest bar. Lines starting with <code>#</code> are notes.</p>
+    <p><b>Prices</b>: <code>open</code> <code>high</code> <code>low</code> <code>close</code> <code>volume</code></p>
+    <p><b>Averages</b>: <code>sma(close, 50)</code> <code>ema(close, 21)</code> <code>avg_volume(20)</code></p>
+    <p><b>Highs and lows</b>: <code>highest(high, 20)</code> <code>lowest(low, 10)</code> <code>high52</code> <code>low52</code></p>
+    <p><b>Earlier bars</b>: <code>ago(close, 1)</code> is the previous bar; <code>ago(sma(close, 40), 4)</code> is the 40-bar average 4 bars ago.</p>
+    <p><b>Momentum</b>: <code>change(1)</code> (% change over 1 bar), <code>rsi(14)</code>, <code>macd()</code>, <code>macd_signal()</code>, <code>rs</code> (RS rating 0–99 against the chosen list)</p>
+    <p><b>Others</b>: <code>atr(14)</code> <code>bb_upper(20, 2)</code> <code>bb_lower(20, 2)</code> <code>gmma_short</code> <code>gmma_long</code></p>
+    <p><b>Crosses</b>: <code>crossed_above(ema(close, 9), ema(close, 21))</code>, <code>crossed_below(close, sma(close, 50))</code></p>
+    <p><b>Joining</b>: <code>and</code>, <code>or</code>, <code>not</code>, brackets, and ranges like <code>40 &lt; rsi(14) &lt; 60</code>.</p>
+    <p><b>Examples</b><br><code>close &gt; 1.05 * ago(close, 5)</code> up 5% in 5 bars<br><code>(high52 - close) / high52 &lt; 0.05</code> within 5% of the 52-week high<br><code>volume &gt; 2 * avg_volume(20) and change(1) &gt; 2</code></p>
+    <p>Bars are daily or weekly depending on the switch at the top. Weekly scans use the last completed week.</p>
+  </div>
+</div>
+<div class="toast" id="toast" hidden></div>
+
+<script src="engine.js"></script>
+<script>
+const E = window.ScanEngine;
+const $ = (id) => document.getElementById(id);
+const UNIS = [
+  { id: 'n50', label: '🇮🇳 Nifty 50', mkt: 'IN', file: 'ind_nifty50list.csv' },
+  { id: 'n500', label: '🇮🇳 Nifty 500', mkt: 'IN', file: 'ind_nifty500list.csv' },
+  { id: 'mid150', label: '🇮🇳 Nifty Midcap 150', mkt: 'IN', file: 'ind_niftymidcap150list.csv' },
+  { id: 'sml250', label: '🇮🇳 Nifty Smallcap 250', mkt: 'IN', file: 'ind_niftysmallcap250list.csv' },
+  { id: 'sp500', label: '🇺🇸 S&P 500', mkt: 'US' },
+];
+const INDEX = { IN: { sym: '^NSEI', name: 'Nifty 50' }, US: { sym: '^GSPC', name: 'S&P 500' } };
+const NIFTY50 = 'ADANIENT ADANIPORTS APOLLOHOSP ASIANPAINT AXISBANK BAJAJ-AUTO BAJFINANCE BAJAJFINSV BEL BHARTIARTL CIPLA COALINDIA DRREDDY EICHERMOT ETERNAL GRASIM HCLTECH HDFCBANK HDFCLIFE HEROMOTOCO HINDALCO HINDUNILVR ICICIBANK INDUSINDBK INFY ITC JIOFIN JSWSTEEL KOTAKBANK LT M&M MARUTI NESTLEIND NTPC ONGC POWERGRID RELIANCE SBILIFE SBIN SHRIRAMFIN SUNPHARMA TATACONSUM TMPV TATASTEEL TCS TECHM TITAN TRENT ULTRACEMCO WIPRO'.split(' ');
+
+const TT_W = `close > sma(close, 30)
+close > sma(close, 40)
+sma(close, 30) > sma(close, 40)
+sma(close, 40) > ago(sma(close, 40), 4)
+sma(close, 10) > sma(close, 30)
+close >= 1.3 * low52
+close >= 0.75 * high52
+rs >= 70`;
+const PRESETS = [
+  { name: 'Leaders Pullback (1-week hold)', tf: 'Weekly', sort: 'chg', asc: true, top: 20, note: 'Our weekly system: strong leaders that fell this week. Buy the top 20 at Monday’s open, sell next week. Trade only when the index banner is green.',
+    text: `close > sma(close, 40)\nrs >= 80\nclose >= 0.75 * high52\nchange(1) < 0` },
+  { name: 'SEPA Trend Template (weekly)', tf: 'Weekly', sort: 'rs', note: 'Minervini Stage 2 checklist on weekly bars.', text: TT_W },
+  { name: 'SEPA Breakout (weekly)', tf: 'Weekly', sort: 'rs', note: 'Trend Template + close above the prior 10-week high, not more than 8% extended.',
+    text: TT_W + `\nclose > ago(highest(high, 10), 1)\nclose <= 1.08 * ago(highest(high, 10), 1)` },
+  { name: 'GMMA Bull Cross (weekly)', tf: 'Weekly', sort: 'rs', note: 'GMMA short group crossed above the long group this week, RS 70+.', text: `crossed_above(gmma_short, gmma_long)\nrs >= 70` },
+  { name: 'Trend Template (daily)', tf: 'Daily', sort: 'rs', note: 'The classic 50/150/200-day version.',
+    text: `close > sma(close, 150)\nclose > sma(close, 200)\nsma(close, 150) > sma(close, 200)\nsma(close, 200) > ago(sma(close, 200), 21)\nsma(close, 50) > sma(close, 150)\nclose > sma(close, 50)\nclose >= 1.3 * low52\nclose >= 0.75 * high52\nrs >= 70` },
+  { name: '52-Week High + Volume', tf: 'Daily', sort: 'vol', note: 'At or near a new high on 1.5× normal volume.', text: `close >= 0.98 * high52\nvolume > 1.5 * avg_volume(50)` },
+  { name: 'Golden Cross', tf: 'Daily', sort: 'rs', note: '50-day average crossed above the 200-day today.', text: `crossed_above(sma(close, 50), sma(close, 200))` },
+  { name: 'RSI Oversold in Uptrend', tf: 'Daily', sort: 'rsi', asc: true, note: 'Dips inside long-term uptrends.', text: `close > sma(close, 200)\nrsi(14) < 35` },
+  { name: 'Volume Shocker', tf: 'Daily', sort: 'vol', note: 'Volume 3× the 20-day average with a 3%+ up day.', text: `volume > 3 * avg_volume(20)\nchange(1) > 3` },
+  { name: 'EMA 9/21 Bull Cross', tf: 'Daily', sort: 'rs', note: 'Short-term momentum turning up, above the 50-day average.', text: `crossed_above(ema(close, 9), ema(close, 21))\nclose > sma(close, 50)` },
+];
+const SORTS = [['rs', 'RS'], ['chg', 'Change'], ['vol', 'Volume ×'], ['rsi', 'RSI'], ['hi', 'Near high'], ['sym', 'A–Z']];
+
+// ---------------------------------------------------------------- state
+const store = { get(k, d) { try { const v = localStorage.getItem(k); return v == null ? d : JSON.parse(v); } catch (e) { return d; } }, set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} } };
+let S = Object.assign({ uni: 'n500', tf: 'Weekly', preset: PRESETS[0].name, sort: 'chg', asc: true, top: 20 }, store.get('scanx-state', {}));
+let mine = store.get('scanx-mine', []);
+const DATA = new Map(); // key -> {master, stocks, savedAt, mkt, idx}
+let lastHits = [], lastData = null;
+
+function toast(m) { const t = $('toast'); t.textContent = m; t.hidden = false; clearTimeout(toast.h); toast.h = setTimeout(() => (t.hidden = true), 2000); }
+function saveState() { S.text = $('text').value; store.set('scanx-state', S); }
+
+// ---------------------------------------------------------------- data
+// On the phone, Capacitor sends these requests natively (no browser CORS limits); a normal browser User-Agent keeps NSE and Yahoo happy.
+const NATIVE = !!(window.Capacitor && window.Capacitor.isNativePlatform && window.Capacitor.isNativePlatform());
+const UA_HDR = NATIVE ? { 'User-Agent': 'Mozilla/5.0 (Linux; Android 14) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Mobile Safari/537.36', 'Accept': '*/*' } : {};
+async function getText(url) { const r = await fetch(url, { headers: UA_HDR }); if (!r.ok) throw new Error('HTTP ' + r.status); return r.text(); }
+function csvRows(t) { return t.trim().split(/\r?\n/).map((l) => { const o = []; let c = '', q = false; for (const ch of l) { if (ch === '"') q = !q; else if (ch === ',' && !q) { o.push(c); c = ''; } else c += ch; } o.push(c); return o; }); }
+async function loadList(u) {
+  if (u.mkt === 'US') {
+    const rows = csvRows(await getText('https://raw.githubusercontent.com/datasets/s-and-p-500-companies/main/data/constituents.csv'));
+    const h = rows[0]; const iS = h.indexOf('Symbol'), iN = h.indexOf('Security'), iC = h.indexOf('GICS Sector');
+    return rows.slice(1).map((r) => ({ sym: r[iS], name: r[iN], sector: r[iC], y: r[iS].replace('.', '-') }));
+  }
+  for (const base of ['https://www.niftyindices.com/IndexConstituent/', 'https://nsearchives.nseindia.com/content/indices/', 'https://archives.nseindia.com/content/indices/']) {
+    try {
+      const rows = csvRows(await getText(base + u.file)); const h = rows[0].map((x) => x.trim());
+      const iS = h.indexOf('Symbol'), iN = h.indexOf('Company Name'), iC = h.indexOf('Industry');
+      if (iS < 0) continue;
+      return rows.slice(1).filter((r) => r[iS]).map((r) => ({ sym: r[iS].trim(), name: r[iN], sector: r[iC], y: r[iS].trim() + '.NS' }));
+    } catch (e) { /* try next source */ }
+  }
+  toast('NSE list unavailable, using Nifty 50');
+  return NIFTY50.map((s) => ({ sym: s, name: s, sector: '', y: s + '.NS' }));
+}
+function weekKey(d) { const x = new Date(d); x.setUTCDate(x.getUTCDate() - ((x.getUTCDay() + 6) % 7)); return x.toISOString().slice(0, 10); }
+async function yahoo(sym, tf) {
+  const q = tf === 'Weekly' ? 'range=5y&interval=1wk' : 'range=2y&interval=1d';
+  const j = await (await fetch(`https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(sym)}?${q}`, { headers: UA_HDR })).json();
+  const r = j.chart && j.chart.result && j.chart.result[0]; if (!r || !r.timestamp) throw new Error('no data');
+  const off = (r.meta && r.meta.gmtoffset) || 0, qt = r.indicators.quote[0];
+  const out = { d: [], o: [], h: [], l: [], c: [], v: [] };
+  r.timestamp.forEach((ts, i) => {
+    if (qt.close[i] == null || qt.open[i] == null) return;
+    let d = new Date((ts + off) * 1000).toISOString().slice(0, 10); if (tf === 'Weekly') d = weekKey(d);
+    const k = out.d.length - 1;
+    if (k >= 0 && out.d[k] === d) { out.h[k] = Math.max(out.h[k], qt.high[i]); out.l[k] = Math.min(out.l[k], qt.low[i]); out.c[k] = qt.close[i]; out.v[k] += qt.volume[i] || 0; return; }
+    out.d.push(d); out.o.push(qt.open[i]); out.h.push(qt.high[i]); out.l.push(qt.low[i]); out.c.push(qt.close[i]); out.v.push(qt.volume[i] || 0);
+  });
+  return out;
+}
+function weekDone(mkt) { const n = new Date(), wd = n.getDay(), h = n.getHours(); if (wd === 6 || wd === 0) return true; return mkt === 'IN' && wd === 5 && h >= 16; }
+
+const idb = { open() { return new Promise((res, rej) => { try { const r = indexedDB.open('scanx', 1); r.onupgradeneeded = () => r.result.createObjectStore('d'); r.onsuccess = () => res(r.result); r.onerror = () => rej(r.error); } catch (e) { rej(e); } }); },
+  async get(k) { try { const db = await this.open(); return await new Promise((res) => { const q = db.transaction('d').objectStore('d').get(k); q.onsuccess = () => res(q.result); q.onerror = () => res(null); }); } catch (e) { return null; } },
+  async set(k, v) { try { const db = await this.open(); db.transaction('d', 'readwrite').objectStore('d').put(v, k); } catch (e) {} } };
+
+async function loadData(force) {
+  const u = UNIS.find((x) => x.id === S.uni), key = u.id + '|' + S.tf, fresh = (x) => x && Date.now() - x.savedAt < 6 * 3600e3;
+  if (!force) { const m = DATA.get(key); if (fresh(m)) return m; const c = await idb.get(key); if (fresh(c)) { DATA.set(key, c); return c; } }
+  showProg(0, 'Getting the stock list…');
+  const list = await loadList(u), idx = INDEX[u.mkt], tf = S.tf;
+  const raw = {}; let done = 0, failed = 0; const syms = [idx.sym, ...list.map((x) => x.y)];
+  let k = 0;
+  async function worker() { while (k < syms.length) { const s = syms[k++]; try { raw[s] = await yahoo(s, tf); } catch (e) { try { raw[s] = await yahoo(s, tf); } catch (e2) { failed++; } } done++; if (done % 5 === 0 || done === syms.length) showProg(done / syms.length, `Downloading prices ${done}/${syms.length}…`); } }
+  await Promise.all(Array.from({ length: 8 }, worker));
+  const ix = raw[idx.sym]; if (!ix) throw new Error('Could not download index prices. Check your internet connection and try again.');
+  let master = ix.d.slice();
+  const thisWeek = weekKey(new Date().toISOString().slice(0, 10));
+  if (tf === 'Weekly' && master.at(-1) === thisWeek && !weekDone(u.mkt)) master.pop();
+  const n = master.length, pos = new Map(master.map((d, i) => [d, i]));
+  const align = (r) => { const A = { open: new Float64Array(n).fill(NaN), high: new Float64Array(n).fill(NaN), low: new Float64Array(n).fill(NaN), close: new Float64Array(n).fill(NaN), volume: new Float64Array(n).fill(NaN) };
+    r.d.forEach((d, i) => { const p = pos.get(d); if (p == null) return; A.open[p] = r.o[i]; A.high[p] = r.h[i]; A.low[p] = r.l[i]; A.close[p] = r.c[i]; A.volume[p] = r.v[i]; });
+    for (let i = 1; i < n; i++) if (isNaN(A.close[i]) && !isNaN(A.close[i - 1])) { A.close[i] = A.open[i] = A.high[i] = A.low[i] = A.close[i - 1]; A.volume[i] = 0; }
+    return A; };
+  const stocks = [];
+  for (const it of list) { const r = raw[it.y]; if (!r || r.c.length < 30) continue; const A = align(r); if (isNaN(A.close[n - 1])) continue;
+    // skip bad data: a bar-to-bar move above +100% / below -60% (usually an unadjusted split)
+    let bad = false; for (let i = 1; i < n; i++) { const ch = A.close[i] / A.close[i - 1]; if (ch > 2 || ch < 0.4) { bad = true; break; } } if (bad) continue;
+    stocks.push(Object.assign({ sym: it.sym, name: it.name, sector: it.sector, y: it.y }, A)); }
+  E.addRS(stocks, tf);
+  const ixA = align(ix);
+  const data = { master, stocks, idx: { name: idx.name, close: ixA.close }, mkt: u.mkt, tf, uni: u.label, savedAt: Date.now(), failed };
+  DATA.set(key, data); idb.set(key, data); hideProg();
+  return data;
+}
+function showProg(f, t) { $('prog').hidden = false; $('progTxt').hidden = false; $('prog').firstElementChild.style.width = (100 * f).toFixed(0) + '%'; $('progTxt').textContent = t; }
+function hideProg() { $('prog').hidden = true; $('progTxt').hidden = true; }
+
+// ---------------------------------------------------------------- scan + render
+const last = (a) => a[a.length - 1];
+function metrics(h, data) {
+  const s = h.stock, c = h.ctx, n = c.n, cl = s.close;
+  const avg = E.sma(s.volume, Math.min(50, n - 1)), hi = c.v('high52'), rsi = E.rsiF(cl, 14);
+  return { s, close: cl[n - 1], chg: 100 * (cl[n - 1] / cl[n - 2] - 1), rs: s.rs[n - 1], rsi: rsi[n - 1], vol: s.volume[n - 1] / avg[n - 1], hi: 100 * (1 - cl[n - 1] / hi[n - 1]) };
+}
+async function runScan(force) {
+  saveState(); $('errBox').replaceChildren(); $('run').disabled = true; $('first').hidden = true;
+  try {
+    const data = await loadData(force); lastData = data;
+    const res = E.run($('text').value, data.stocks, data.tf);
+    if (res.errors.length) { const e = document.createElement('div'); e.className = 'err'; e.textContent = 'Fix this line and run again:\n' + res.errors.join('\n'); $('errBox').append(e); }
+    lastHits = res.hits.map((h) => metrics(h, data));
+    renderRegime(data); renderResults();
+    const dt = new Date(data.master.at(-1) + 'T00:00:00Z'); if (data.tf === 'Weekly') dt.setUTCDate(dt.getUTCDate() + 4);
+    $('status').textContent = `${data.uni.replace(/^\S+\s/, '')} · ${data.stocks.length} stocks · ${data.tf === 'Weekly' ? 'week to ' : ''}${dt.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', timeZone: 'UTC' })}`;
+    $('refresh').hidden = false;
+  } catch (e) {
+    hideProg(); const b = document.createElement('div'); b.className = 'err'; b.textContent = (e && e.message) || String(e); $('errBox').append(b);
+  } finally { $('run').disabled = false; }
+}
+function renderRegime(d) {
+  const n = d.tf === 'Weekly' ? 40 : 200, c = d.idx.close, ma = E.sma(c, n), on = last(c) > last(ma);
+  const el = $('regime'); el.className = 'regime ' + (isNaN(last(ma)) ? '' : on ? 'on' : 'off');
+  el.textContent = isNaN(last(ma)) ? '' : `${on ? '🟢' : '🔴'} ${d.idx.name} ${Math.round(last(c)).toLocaleString('en-IN')} is ${on ? 'above' : 'below'} its ${n}-${d.tf === 'Weekly' ? 'week' : 'day'} average ${Math.round(last(ma)).toLocaleString('en-IN')}`;
+}
+function sorted() {
+  const k = S.sort, dir = S.asc ? 1 : -1; const arr = lastHits.slice();
+  arr.sort((a, b) => k === 'sym' ? a.s.sym.localeCompare(b.s.sym) : ((isNaN(a[k]) ? 1e18 * dir : a[k]) - (isNaN(b[k]) ? 1e18 * dir : b[k])) * dir);
+  return S.top ? arr.slice(0, S.top) : arr;
+}
+function renderResults() {
+  $('results').hidden = false; const rows = sorted(), cur = lastData.mkt === 'IN' ? '₹' : '$';
+  $('count').firstChild.nodeValue = String(rows.length); $('count').lastChild.textContent = rows.length === lastHits.length ? ' stocks' : ` of ${lastHits.length}`;
+  $('sorts').replaceChildren(...SORTS.map(([k, t]) => { const b = document.createElement('button'); b.type = 'button'; b.className = 'chip'; b.textContent = t + (S.sort === k ? (S.asc ? ' ↑' : ' ↓') : '');
+    b.setAttribute('aria-pressed', String(S.sort === k)); b.onclick = () => { if (S.sort === k) S.asc = !S.asc; else { S.sort = k; S.asc = k === 'sym' || k === 'hi'; } saveState(); renderResults(); }; return b; }));
+  const topBtn = document.createElement('button'); topBtn.type = 'button'; topBtn.className = 'chip'; topBtn.textContent = S.top ? `Top ${S.top}` : 'All'; topBtn.setAttribute('aria-pressed', String(!!S.top));
+  topBtn.onclick = () => { S.top = { 0: 10, 10: 20, 20: 50, 50: 0 }[S.top] ?? 0; saveState(); renderResults(); }; $('sorts').append(topBtn);
+  const list = $('list');
+  if (!rows.length) { list.replaceChildren(Object.assign(document.createElement('div'), { className: 'empty', textContent: 'No stocks match this scan today.' })); return; }
+  list.replaceChildren(...rows.map((r) => {
+    const b = document.createElement('button'); b.type = 'button'; b.className = 'stock';
+    const f = (v, d = 0) => isFinite(v) ? v.toFixed(d) : '—';
+    b.innerHTML = `<div><span class="s"></span><span class="rs">RS ${f(r.rs)}</span></div><div class="p">${cur}${isFinite(r.close) ? r.close.toLocaleString('en-IN', { maximumFractionDigits: 2 }) : '—'}</div>
+      <div class="n"></div><div class="ch ${r.chg >= 0 ? 'pos' : 'neg'}">${r.chg >= 0 ? '+' : ''}${f(r.chg, 1)}%</div>
+      <div class="m"><span>RSI ${f(r.rsi)}</span><span>Vol ${f(r.vol, 1)}×</span><span>${f(r.hi, 1)}% off high</span></div>`;
+    b.querySelector('.s').textContent = r.s.sym; b.querySelector('.n').textContent = [r.s.name, r.s.sector].filter(Boolean).join(' · ');
+    b.onclick = () => openChart(r); return b;
+  }));
+}
+function tvUrl(sym) { return 'https://www.tradingview.com/chart/?symbol=' + encodeURIComponent((lastData.mkt === 'IN' ? 'NSE:' : '') + sym.replace('-', '.')); }
+
+// ---------------------------------------------------------------- chart
+function openChart(r) {
+  $('chartSheet').hidden = false; $('cTitle').textContent = `${r.s.sym} · ${lastData.tf}`; $('tvLink').href = tvUrl(r.s.sym);
+  const f = (v, d = 2) => isFinite(v) ? v.toLocaleString('en-IN', { maximumFractionDigits: d }) : '—';
+  const cur = lastData.mkt === 'IN' ? '₹' : '$';
+  $('cStats').innerHTML = `<div>Close<b>${cur}${f(r.close)}</b></div><div>Change<b class="${r.chg >= 0 ? 'pos' : 'neg'}">${r.chg >= 0 ? '+' : ''}${f(r.chg, 1)}%</b></div>
+    <div>RS rating<b>${f(r.rs, 0)}</b></div><div>RSI 14<b>${f(r.rsi, 0)}</b></div><div>Volume vs avg<b>${f(r.vol, 1)}×</b></div><div>Below 52-wk high<b>${f(r.hi, 1)}%</b></div>`;
+  window._lastChart = r.s; requestAnimationFrame(() => drawChart(r.s));
+}
+function drawChart(s) {
+  const cv = $('cv'), dpr = window.devicePixelRatio || 1, W = cv.clientWidth, H = cv.clientHeight; cv.width = W * dpr; cv.height = H * dpr;
+  const g = cv.getContext('2d'); g.scale(dpr, dpr); g.clearRect(0, 0, W, H);
+  const css = getComputedStyle(document.documentElement), col = (v) => css.getPropertyValue(v).trim();
+  const tf = lastData.tf, n = s.close.length, show = Math.min(tf === 'Weekly' ? 104 : 130, n), from = n - show;
+  const lens = tf === 'Weekly' ? [10, 30, 40] : [50, 150, 200], mcol = ['#2F7BFF', '#F29A1F', '#A77BFF'];
+  const mas = lens.map((L) => E.sma(s.close, L));
+  let lo = Infinity, hi = -Infinity; for (let i = from; i < n; i++) { if (isFinite(s.low[i])) lo = Math.min(lo, s.low[i]); if (isFinite(s.high[i])) hi = Math.max(hi, s.high[i]); for (const m of mas) if (isFinite(m[i])) { lo = Math.min(lo, m[i]); hi = Math.max(hi, m[i]); } }
+  { const padv = (hi - lo) * 0.04; lo -= padv; hi += padv; }
+  const pad = { l: 8, r: 52, t: 26, b: 22 }, cw = W - pad.l - pad.r, ch = H - pad.t - pad.b, bw = cw / show;
+  const y = (v) => pad.t + ch * (1 - (v - lo) / (hi - lo || 1)), x = (i) => pad.l + (i - from + 0.5) * bw;
+  g.font = '11px -apple-system,Roboto,sans-serif'; g.fillStyle = col('--muted'); g.strokeStyle = col('--line'); g.lineWidth = 1;
+  const step = niceStep((hi - lo) / 4); for (let v = Math.ceil(lo / step) * step; v <= hi; v += step) { g.beginPath(); g.moveTo(pad.l, y(v)); g.lineTo(W - pad.r, y(v)); g.stroke(); g.fillText(v.toLocaleString('en-IN', { maximumFractionDigits: v < 10 ? 2 : 0 }), W - pad.r + 6, y(v) + 4); }
+  let lastM = ''; for (let i = from; i < n; i++) { const m = lastData.master[i].slice(0, 7); if (m !== lastM && (lastM === '' ? false : ['01', '04', '07', '10'].includes(m.slice(5)))) { g.fillText(['', 'Jan', '', '', 'Apr', '', '', 'Jul', '', '', 'Oct'][+m.slice(5)] + ' ' + m.slice(2, 4), x(i) - 14, H - 6); } lastM = m; }
+  for (let i = from; i < n; i++) { const o = s.open[i], c = s.close[i]; if (!isFinite(c)) continue; const up = c >= o; g.strokeStyle = g.fillStyle = up ? col('--up') : col('--down');
+    g.beginPath(); g.moveTo(x(i), y(s.high[i])); g.lineTo(x(i), y(s.low[i])); g.stroke(); const top = y(Math.max(o, c)), hgt = Math.max(1, Math.abs(y(o) - y(c))); g.fillRect(x(i) - Math.max(1, bw * 0.32), top, Math.max(2, bw * 0.64), hgt); }
+  mas.forEach((m, k) => { g.strokeStyle = mcol[k]; g.lineWidth = 1.6; g.beginPath(); let st = false; for (let i = from; i < n; i++) { if (!isFinite(m[i])) continue; const yy = y(Math.min(hi, Math.max(lo, m[i]))); if (!st) { g.moveTo(x(i), yy); st = true; } else g.lineTo(x(i), yy); } g.stroke(); });
+  g.lineWidth = 1; lens.forEach((L, k) => { g.fillStyle = mcol[k]; g.fillRect(pad.l + k * 78, 9, 14, 3); g.fillStyle = col('--muted'); g.fillText(`SMA ${L}`, pad.l + k * 78 + 18, 14); });
+}
+function niceStep(r) { const p = Math.pow(10, Math.floor(Math.log10(r || 1))); for (const m of [1, 2, 2.5, 5, 10]) if (r <= m * p) return m * p; return 10 * p; }
+
+// ---------------------------------------------------------------- controls
+function fillPresets() {
+  const sel = $('preset'); sel.replaceChildren();
+  const g1 = document.createElement('optgroup'); g1.label = 'Saved scans'; PRESETS.forEach((p) => g1.append(new Option(p.name, p.name))); sel.append(g1);
+  if (mine.length) { const g2 = document.createElement('optgroup'); g2.label = 'My scans'; mine.forEach((p) => g2.append(new Option(p.name, 'mine:' + p.name))); sel.append(g2); }
+  sel.append(new Option('✏️ Custom (type your own)', 'custom'));
+  sel.value = S.preset;
+  if (sel.value !== S.preset) sel.value = 'custom';
+}
+function applyPreset(v, keepText) {
+  S.preset = v; let p = PRESETS.find((x) => x.name === v);
+  if (!p && v.startsWith('mine:')) p = mine.find((x) => 'mine:' + x.name === v);
+  if (p) { if (!keepText) $('text').value = p.text; if (p.tf) setTf(p.tf, true); if (p.sort) { S.sort = p.sort; S.asc = !!p.asc; } S.top = p.top || 0; $('pnote').textContent = p.note || 'Your saved scan.'; }
+  else $('pnote').textContent = 'Write your own conditions below. Tap Help for the list of indicators.';
+  saveState();
+}
+function setTf(tf, silent) { S.tf = tf; $('tfD').setAttribute('aria-pressed', String(tf === 'Daily')); $('tfW').setAttribute('aria-pressed', String(tf === 'Weekly')); if (!silent) saveState(); }
+
+$('uni').replaceChildren(...UNIS.map((u) => new Option(u.label, u.id))); $('uni').value = S.uni;
+$('uni').onchange = () => { S.uni = $('uni').value; saveState(); };
+$('tfD').onclick = () => setTf('Daily'); $('tfW').onclick = () => setTf('Weekly');
+fillPresets(); applyPreset(S.preset, !!S.text); if (S.text) $('text').value = S.text; setTf(S.tf, true);
+$('preset').onchange = () => applyPreset($('preset').value);
+$('text').oninput = () => { if ($('preset').value !== 'custom' && !$('preset').value.startsWith('mine:')) { $('preset').value = 'custom'; S.preset = 'custom'; $('pnote').textContent = 'Edited scan. Tap Save to keep it.'; } saveState(); };
+$('run').onclick = () => runScan(false);
+$('refresh').onclick = () => runScan(true);
+$('help').onclick = () => ($('helpSheet').hidden = false); $('closeHelp').onclick = () => ($('helpSheet').hidden = true);
+$('closeChart').onclick = () => ($('chartSheet').hidden = true);
+$('save').onclick = () => { const box = document.createElement('div'); box.className = 'card';
+  box.innerHTML = '<label class="l" for="saveName">Name this scan</label><input id="saveName" maxlength="40" placeholder="e.g. My breakout scan"><div class="row"><button class="btn primary" type="button" id="saveOk">Save scan</button><button class="btn small" type="button" id="saveNo">Cancel</button></div>';
+  $('errBox').replaceChildren(box); $('saveName').focus();
+  $('saveNo').onclick = () => box.remove();
+  $('saveOk').onclick = () => { const name = $('saveName').value.trim(); if (!name) { $('saveName').focus(); return; }
+    mine = mine.filter((m) => m.name !== name).concat([{ name, text: $('text').value, tf: S.tf, sort: S.sort, asc: S.asc, top: S.top }]); store.set('scanx-mine', mine);
+    S.preset = 'mine:' + name; fillPresets(); $('preset').value = S.preset; $('pnote').textContent = 'Your saved scan.'; saveState(); box.remove(); toast('Saved “' + name + '”'); }; };
+$('copy').onclick = async () => { const s = sorted().map((r) => (lastData.mkt === 'IN' ? 'NSE:' : '') + r.s.sym.replace('-', '.')).join(','); if (!s) return;
+  try { await navigator.clipboard.writeText(s); toast('Copied ' + s.split(',').length + ' tickers'); }
+  catch (e) { const t = document.createElement('textarea'); t.value = s; document.body.append(t); t.select(); try { document.execCommand('copy'); toast('Copied'); } catch (_) { toast('Copy failed'); } t.remove(); } };
+window.addEventListener('resize', () => { if (!$('chartSheet').hidden && window._lastChart) drawChart(window._lastChart); });
+// Android back button (Capacitor App plugin): close an open sheet first, otherwise leave the app
+try { const App = window.Capacitor && window.Capacitor.Plugins && window.Capacitor.Plugins.App;
+  if (App) App.addListener('backButton', () => { if (!$('chartSheet').hidden) $('chartSheet').hidden = true; else if (!$('helpSheet').hidden) $('helpSheet').hidden = true; else App.exitApp(); });
+} catch (e) {}
+</script>
+</body>
+</html>

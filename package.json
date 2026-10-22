@@ -1,0 +1,18 @@
+{
+  "name": "scanx",
+  "version": "1.0.0",
+  "private": true,
+  "description": "ScanX - Chartink-style stock screener for Android",
+  "scripts": {
+    "prepare-web": "mkdir -p www && cp index.html engine.js www/"
+  },
+  "dependencies": {
+    "@capacitor/android": "7.6.9",
+    "@capacitor/app": "7.1.2",
+    "@capacitor/core": "7.6.9"
+  },
+  "devDependencies": {
+    "@capacitor/assets": "3.0.5",
+    "@capacitor/cli": "7.6.9"
+  }
+}
